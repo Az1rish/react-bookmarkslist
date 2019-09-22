@@ -51,7 +51,8 @@ componentDidMount() {
   
   render() {
     const page = this.state.showAddForm
-      ? <AddBookmark />
+      ? <AddBookmark 
+          showForm={show => this.setShowAddForm(show)}/>
       : <BookmarkApp 
           bookmarks={this.state.bookmarks}
           showForm={show => this.setShowAddForm(show)}/>
