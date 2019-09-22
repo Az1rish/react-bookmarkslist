@@ -41,13 +41,20 @@ componentDidMount() {
         error: err.message
       });
     });
+  }
 
-}
+  setShowAddForm(show) {
+    this.setState({
+      showAddForm: show
+    });
+  }
   
   render() {
     const page = this.state.showAddForm
       ? <AddBookmark />
-      : <BookmarkApp bookmarks={this.state.bookmarks}/>
+      : <BookmarkApp 
+          bookmarks={this.state.bookmarks}
+          showForm={show => this.setShowAddForm(show)}/>
     return (
       <div className="App">
         { page }
